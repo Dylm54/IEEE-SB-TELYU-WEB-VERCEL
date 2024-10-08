@@ -8,15 +8,15 @@ export default function DashboardNav() {
     const menuItems = [
         {
             name: "News",
-            url: "/DashboardNews",
+            url: "/#DashboardNews",
         },
         {
             name: "Achievements",
-            url: "/DashboardAchievements"
+            url: "/#DashboardAchievements"
         },
         {
             name: "Recent Activity",
-            url: "/DashboardRecentActivities",
+            url: "/#DashboardRecentActivities",
         },
     ];
 

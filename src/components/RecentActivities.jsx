@@ -70,7 +70,7 @@ const Card = ({ card, index }) => {
 const ResponsiveCard = ({ card, index }) => {
     return (
         <div key={card.id} className="aspect-[1.25] max-h-[600px] sm:rounded-[calc(16px+16*(100vw-576px)/1024)] rounded-[16px] relative overflow-hidden w-full">
-            <a href="" className="sm:rounded-[calc(16px+16*(100vw-576px)/1024)] absolute w-full h-full left-0 top-0 cursor-pointer z-[3]"></a>
+            <a className="sm:rounded-[calc(16px+16*(100vw-576px)/1024)] absolute w-full h-full left-0 top-0 cursor-pointer z-[3]"></a>
             <div className="sm:p-[calc(24px+16*(100vw-576px)/1024)] z-[2] p-[24px] h-full relative flex flex-col justify-between gap-[24px]">
                 <div className="flex flex-row gap-[24px] justify-end">
                     <div className="sm:gap-[calc(16px+48*(100vw-576px)/1024)] gap-[1rem] flex items-center">

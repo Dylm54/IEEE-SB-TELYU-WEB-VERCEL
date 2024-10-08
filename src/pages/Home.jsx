@@ -86,8 +86,10 @@ const Home = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/news`)
                 const data = await response.data
-                const fiveData = data.slice(0, 5)
+                console.log(data)
+                const fiveData = data.slice(-5)
                 const reversedData = [...fiveData].reverse()
+                console.log(reversedData)
                 setFiveNews(reversedData)
             } catch (err) {
                 console.log(err)
@@ -101,7 +103,7 @@ const Home = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/activities`)
                 const data = await response.data
-                const fiveData = data.slice(0, 5)
+                const fiveData = data.slice(-5)
                 const reversedData = [...fiveData].reverse()
                 setFiveActivities(reversedData)
             } catch (err) {
@@ -116,7 +118,7 @@ const Home = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/achievements`)
                 const data = await response.data
-                const fiveData = data.slice(0, 5)
+                const fiveData = data.slice(-5)
                 const reversedData = [...fiveData].reverse()
                 setFiveAch(reversedData)
             } catch (err) {
