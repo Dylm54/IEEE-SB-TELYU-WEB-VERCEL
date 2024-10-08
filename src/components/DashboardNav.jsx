@@ -51,7 +51,7 @@ export default function DashboardNav() {
                 <Link
                             color="danger"
                             className="w-full"
-                            href="#"
+                            href="/#AdminForJournalists"
                             size="lg"
                         >
                             Logout
