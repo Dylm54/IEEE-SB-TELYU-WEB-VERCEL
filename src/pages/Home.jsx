@@ -13,6 +13,7 @@ import { CarouselAch } from "../components/CarouselAch";
 import { RecentActivities, ResponsiveRecentActivities } from "../components/RecentActivities";
 import { CountAnimation } from "../components/CountAnimation";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 const AchievementsTempData = [
     {
@@ -130,6 +131,16 @@ const Home = () => {
 
     return (
         <div className={isScrolling ? 'scrolling' : ''}>
+            <Helmet>
+                <title>Home - IEEE SB Telkom University</title>
+                <meta name="description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+                <meta property="og:title" content="Home - IEEE SB Telkom University" />
+                <meta property="og:description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="./src/assets/IEEE_Thumbnail.jpeg" />
+                <link rel="canonical" href={window.location.href} />
+            </Helmet>
             <Nav />
             <section>
                 <div className="bg-black purple flex w-full pt-[120px] pb-[60px] sm:pt-[calc((60px+(6000vw-34560px)/1024)*2)] sm:pb-[calc(60px+60*(100vw-576px)/1024)] 2xl:pt-[240px] 2xl:pb-[7.5vw]">
@@ -188,7 +199,7 @@ const Home = () => {
                 {window.innerWidth > 1024 && fiveNews ? (
                     <div className="bg-white">
                         <HorizontalScrollCarousel cards={fiveNews} />
-                    </div> ):(
+                    </div>) : (
                     <ResponsiveNews cards={fiveNews} />
                 )}
             </section>
@@ -378,10 +389,10 @@ const Home = () => {
                             </h1>
                         </div>
                     </Reveal>
-                    {fiveAch && 
-                    <Reveal>
-                        <CarouselAch achData={fiveAch} />
-                    </Reveal>}
+                    {fiveAch &&
+                        <Reveal>
+                            <CarouselAch achData={fiveAch} />
+                        </Reveal>}
                     <Reveal>
                         <div className="justify-center flex items-center flex-col gap-[1.5rem] h-full">
                             <div>
@@ -402,7 +413,7 @@ const Home = () => {
             {window.innerWidth > 1024 && fiveActivities ? (
                 <div>
                     <RecentActivities cards={fiveActivities} />
-                </div> ):(
+                </div>) : (
                 <ResponsiveRecentActivities cards={fiveActivities} />
             )}
             <Footer />

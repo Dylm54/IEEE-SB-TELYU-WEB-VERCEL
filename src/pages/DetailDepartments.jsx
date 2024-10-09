@@ -6,6 +6,7 @@ import { CarouselForDepartmentsOfficers } from "../components/CarouselForDepartm
 import { DataDepartments } from "../utils/DataDepartments"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { Helmet } from 'react-helmet';
 
 export const DetailDepartments = () => {
     const indexData = useParams()
@@ -13,6 +14,16 @@ export const DetailDepartments = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>{`${DataDepartments[indexPage]?.name} - IEEE SB Telkom University`}</title>
+                <meta name="description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+                <meta property="og:title" content={`${DataDepartments[indexPage]?.name} - IEEE SB Telkom University`} />
+                <meta property="og:description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="./src/assets/IEEE_Thumbnail.jpeg" />
+                <link rel="canonical" href={window.location.href} />
+            </Helmet>
             <Nav />
             <section className="bg-black pt-[120px] pb-[60px] sm:pt-[calc((60px+(6000vw-34560px)/1024)*2)] sm:pb-[calc(60px+60*(100vw-576px)/1024)] 2xl:pt-[240px] 2xl:pb-[7.5vw]">
                 <div className="2xl:px-[90px] sm:px-[calc(20px+70*(100vw-576px)/1024)] px-[20px]">
@@ -43,16 +54,16 @@ export const DetailDepartments = () => {
                         </div>
                     </Reveal>
                     <Reveal>
-                    <div className="flex w-full flex-wrap justify-center gap-12 mb-[60px]">
-                        {DataDepartments[indexPage]?.workPrograms.map((wp, i) => (
-                            
+                        <div className="flex w-full flex-wrap justify-center gap-12 mb-[60px]">
+                            {DataDepartments[indexPage]?.workPrograms.map((wp, i) => (
+
                                 <div key={i} className="gradientBgOfficerCard purpleBoxShadow w-[480px] 2xl:rounded-[32px] rounded-[16px] lg:p-[3vw] md:p-[2rem] p-[1.5rem]">
                                     <h2 className="text-center sm:text-[30px] text-[20px] leading-[1.15] font-[590] text-[#C0A2FE] mb-[1.5rem]">{wp.name}</h2>
                                     <p className="text-center 2xl:text-[25px] sm:text-[20px] text-[#9575D7] text-[16px] leading-[1.4] overflow-hidden">{wp.desc}</p>
                                 </div>
-                            
-                        ))}
-                    </div>
+
+                            ))}
+                        </div>
                     </Reveal>
                 </div>
             </section>
