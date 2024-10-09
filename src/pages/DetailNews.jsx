@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Toaster, toast } from 'sonner'
 import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 const DetailNews = () => {
   const { id } = useParams()
@@ -59,17 +60,30 @@ const DetailNews = () => {
     return toast.success("Copied to clipboard!")
   }
 
+  console.log(newsData?.isi_konten.blocks[0].data.text.substring(0,100) + "...")
+
+
   return (
     <div className="relative overflow-x-hidden">
+      <Helmet>
+        <title>{newsData?.title}</title>
+        <meta name="description" content={newsData?.isi_konten.blocks[0].data.text.substring(0,100) + "..."}/>
+        <meta property="og:title" content={newsData?.title} />
+        <meta property="og:description" content={newsData?.isi_konten.blocks[0].data.text.substring(0,100) + "..."} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:image" content={`${import.meta.env.VITE_API_URL}/uploads/${newsData?.thumbnail}`} />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
       <WhiteNav />
       {/* <section className="mt-[100px] flex justify-center">
         <div className="header flex items-center gap-[100px] sm:gap-[200px] md:gap-[300px] lg:gap-[400px] xl:gap-[600px] md:mt-[50px]"> */}
       <section className='2xl:pt-240px sm:pt-[calc((60px+(6000vw-34560px)/1024)*2)] pt-[120px] 2xl:pb-[3.75vw] sm:pb-[calc(30px+30*(100vw-576px)/1024)] pb-[30px]'>
         <div className='2xl:max-w-[69.5vw] sm:max-w-[calc(932px+(20px+(7000vw-40320px)/1024)*2)] max-w-[972px] m-auto 2xl:px-[90px] sm:px-[calc(20px+70*(100vw-576px)/1024)] px-[20px]'>
           <div className="2xl:mb-[2rem] sm:mb-[calc(16px+16*(100vw-576px)/1024)] mb-[1rem] flex items-center justify-between">
-            <a href="#/News/All" className="no-underline">
+            <a className="no-underline">
               <div className="left-side flex items-center">
-                <button className="border-1 rounded-[50%] border-[#ECF1F4] p-2">
+                <button className="border-1 rounded-[50%] border-[#ECF1F4] p-2" onClick={() => window.location.href = "/#News/All"}>
                   <IoArrowBack className="w-5 h-5" />
                 </button>
                 <span className="ml-[10px] hidden md:flex">All articles</span>

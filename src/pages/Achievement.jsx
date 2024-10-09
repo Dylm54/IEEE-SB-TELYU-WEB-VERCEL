@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Reveal from "../components/RevealAnimation";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 function Achievement() {
 
@@ -54,6 +55,16 @@ function Achievement() {
 
   return (
     <div className="relative overflow-x-hidden">
+      <Helmet>
+        <title>Achievements - IEEE SB Telkom University</title>
+        <meta name="description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+        <meta property="og:title" content="Achievements - IEEE SB Telkom University" />
+        <meta property="og:description" content="IEEE SB Telkom University is the official reasoning UKM organization at Telkom University, functions as an intermediary between Telkom University students and IEEE as well as developing students in organizing and involving members in research and innovation development activities on a national to international scale." />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="./src/assets/IEEE_Thumbnail.jpeg" />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
       <WhiteNav />
       {/* zero section */}
       <Reveal>
