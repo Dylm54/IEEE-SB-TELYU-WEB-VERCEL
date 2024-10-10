@@ -90,6 +90,12 @@
   align-items: center;
 }
 
+.slick-track {
+  display: flex !important;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .darkSlick .slick-slider .slick-dots li button:before {
   color: white !important;
 }
