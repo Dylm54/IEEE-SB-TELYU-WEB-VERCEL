@@ -5,7 +5,7 @@ import Reveal from "../components/RevealAnimation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const News = () => {
     const { kategori } = useParams()
@@ -44,7 +44,6 @@ const News = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/news/category/${kategori}`)
                 const data = await response.data
-                console.log(data)
                 const reversedData = [...data].reverse()
                 setAllData(reversedData)
             } catch (err) {

@@ -6,7 +6,7 @@ import { CarouselForDepartmentsOfficers } from "../components/CarouselForDepartm
 import { DataDepartments } from "../utils/DataDepartments"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export const DetailDepartments = () => {
     const indexData = useParams()

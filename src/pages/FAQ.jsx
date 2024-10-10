@@ -6,7 +6,7 @@ import "../index.css";
 import AccordionFAQ from "../components/AccordionFAQ";
 import Reveal from "../components/RevealAnimation";
 import { useEffect } from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function FAQ() {
 
