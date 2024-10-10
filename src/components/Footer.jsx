@@ -57,7 +57,6 @@ function Footer() {
 
         try {
             const res = await axios.post("https://api.emailjs.com/api/v1.0/email/send", data)
-            console.log(res.data)
             setName('')
             setEmail('')
             setSubject('')

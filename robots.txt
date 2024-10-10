@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /AdminForJournalists
+Disallow: /DashboardNews
+Disallow: /DashboardAchievements
+Disallow: /DashboardRecentActivities
+Disallow: /AddNews
+Disallow: /AddAchievement
+Disallow: /AddRecentActivity

@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Reveal from "../components/RevealAnimation";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function Achievement() {
 

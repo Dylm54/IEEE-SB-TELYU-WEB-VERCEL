@@ -17,7 +17,7 @@ import FotoRifki from "../assets/FotoRifki.png"
 import FotoKaysan from "../assets/FotoKaysan.png"
 import FotoNazer from "../assets/FotoNazer.png"
 import FotoCicang from "../assets/FotoCicang.png"
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export const Departments = () => {
     const goalsText = "IEEE SB Telkom University Goals"

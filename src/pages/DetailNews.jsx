@@ -17,7 +17,7 @@ import { useState } from "react";
 import { Toaster, toast } from 'sonner'
 import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const DetailNews = () => {
   const { id } = useParams()
@@ -47,7 +47,6 @@ const DetailNews = () => {
         data = data.filter(news => news.id !== newsId)
         const fourData = data.slice(0, 4)
         setFourNews(fourData)
-        console.log(fourData)
       } catch (err) {
         console.log(err)
       }
@@ -60,7 +59,6 @@ const DetailNews = () => {
     return toast.success("Copied to clipboard!")
   }
 
-  console.log(newsData?.isi_konten.blocks[0].data.text.substring(0,100) + "...")
 
 
   return (

@@ -13,7 +13,7 @@ import { CarouselAch } from "../components/CarouselAch";
 import { RecentActivities, ResponsiveRecentActivities } from "../components/RecentActivities";
 import { CountAnimation } from "../components/CountAnimation";
 import axios from "axios";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const AchievementsTempData = [
     {
@@ -87,10 +87,8 @@ const Home = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/news`)
                 const data = await response.data
-                console.log(data)
                 const fiveData = data.slice(-5)
                 const reversedData = [...fiveData].reverse()
-                console.log(reversedData)
                 setFiveNews(reversedData)
             } catch (err) {
                 console.log(err)
