@@ -144,11 +144,6 @@ const DetailNews = () => {
         </div>
       </section>
 
-
-      <div className="flex justify-end top-[40px] -mr-[15rem] md:-mr-[18rem]">
-        <div className="colour-effect-purple"></div>
-      </div>
-
       <Reveal>
         <section className='2xl:pb-[3.75vw] sm:pb-[calc(24px+36*(100vw-576px)/1024)] pb-[24px]'>
           <div className='2xl:px-[90px] sm:px-[calc(20px+70*(100vw-576px)/1024)] px-[20px]'>
